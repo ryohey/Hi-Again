@@ -1,3 +1,7 @@
+#root {
+  padding: 2rem;
+}
+
 .modal {
   position: absolute;
   background: white;
@@ -11,8 +15,38 @@ li.todo {
   width: 22rem;
   list-style-type: none;
   border-bottom: 1px solid #0000001f;
+  margin-bottom: 1rem;
 }
 
 li.todo .title {
   font-weight: bold;
+}
+
+ul {
+  padding: 0;
+}
+
+button {
+  -webkit-appearance: none;
+  border: 1px solid gray;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+p {
+  margin: 0;
+}
+
+label {
+  display: block;
+  margin: 0;
+}
+
+input {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: inherit;
 }
