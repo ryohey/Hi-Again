@@ -11,6 +11,24 @@ This is just an idea, but we can do it.
 We can see the whole application logic.
 
 ```ts
+export interface Todo {
+  title: string
+  description: string
+}
+
+export interface Store {
+  getTodos(): Promise<Todo[]>
+  addTodo(todo: Todo): Promise<void>
+}
+
+export interface View {
+  showTodos(todos: Todo[]): Promise<["click-todo", Todo] | ["create-todo"]>
+  showTodo(Todo: Todo): Promise<["close"]>
+  showCreateForm(): Promise<["cancel"] | ["create", Todo]>
+  closeCreateForm(): Promise<void>
+  closeTodo(Todo: Todo): Promise<void>
+}
+
 export const mainLoop = async (store: Store, view: View) => {
   initial: while (true) {
     const todos = await store.getTodos()
